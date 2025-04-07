@@ -1,0 +1,55 @@
+version: "3.8"
+
+services:
+  i2p:
+    image: geti2p/i2p:latest
+    deploy:
+      mode: replicated
+      replicas: 100  # Number of I2P instances to install on the Docker Container (Portainer)
+    ports:
+      - target: 4444   # HTTP Proxy
+        published: 0   # Dynamic host port assignment
+        protocol: tcp
+      - target: 4445   # HTTPS Proxy
+        published: 0
+        protocol: tcp
+      - target: 6668   # IRC
+        published: 0
+        protocol: tcp
+      - target: 7652   # UDP Tunnel
+        published: 0
+        protocol: udp
+      - target: 7653   # UPnP
+        published: 0
+        protocol: tcp
+      - target: 7654   # SAM
+        published: 0
+        protocol: tcp
+      - target: 7656   # BOB
+        published: 0
+        protocol: tcp
+      - target: 7657   # WebConsole
+        published: 0
+        protocol: tcp
+      - target: 7658   # I2CP
+        published: 0
+        protocol: tcp
+      - target: 7659   # HTTP
+        published: 0
+        protocol: tcp
+      - target: 7660   # HTTPS
+        published: 0
+        protocol: tcp
+    # Use an anonymous volume so each replica gets its own persistent space.
+    volumes:
+      - /var/lib/i2p
+    restart: unless-stopped
+    networks:
+      - i2pnetw
+    # Enable interactive exec sessions via Portainer
+    tty: true
+    stdin_open: true
+
+networks:
+  i2pnetw:
+    driver: bridge
