@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# Base URL of the I2P routers
+BASE_URL="http://107.173.236.210"
+
+# List of port numbers for each I2P router container
+PORTS=(32995 32929 32885 33017 32984 33028 32841 32808 33039 33050 32896 33061 32918 32962 32797 33072 32951 32874 32830 32852)
+
+# File paths
+OUTPUT_DIR="/i2p_data1"
+PEERS_FILE="$OUTPUT_DIR/high_capacity_peers.txt"
+FREQUENCY_FILE="$OUTPUT_DIR/peer_frequency.txt"
+
+# Ensure the output directory exists
+mkdir -p "$OUTPUT_DIR"
+
+# Clear the peers file at the start
+> "$PEERS_FILE"
+
+# Function to fetch high-capacity nodes from each I2P router
+fetch_high_capacity_nodes() {
+    local PORT=$1
+    I2P_URL="$BASE_URL:$PORT/profiles"
+    OUTPUT_FILE="$OUTPUT_DIR/high_capacity_routers_$PORT.html"
+    
+    # Fetch the high-capacity nodes
+    curl -s "$I2P_URL" -o "$OUTPUT_FILE"
+    
+    # Parse and extract high-capacity peers
+    grep -A 1000 'High Capacity' "$OUTPUT_FILE" | grep -B 1000 '</table>' | grep -oP '(?<=href="netdb\?r=)[^"]+' >> "$PEERS_FILE"
+}
+
+# Function to count the frequency of each peer
+count_peer_frequency() {
+    sort "$PEERS_FILE" | uniq -c | sort -nr > "$FREQUENCY_FILE"
+}
+
+# Infinite loop to continuously collect data
+while true; do
+    # Clear the peers file before each collection
+    > "$PEERS_FILE"
+    
+    # Fetch the high-capacity nodes from all routers concurrently
+    for PORT in "${PORTS[@]}"; do
+        fetch_high_capacity_nodes "$PORT" &
+    done
+    
+    # Wait for all background processes to finish
+    wait
+    
+    # Count the frequency of each peer
+    count_peer_frequency
+    
+    # Output the result
+    echo "Peer ID frequencies (updated):"
+    cat "$FREQUENCY_FILE"
+    
+    # Wait for 1 second before the next iteration
+    sleep 1
+done
