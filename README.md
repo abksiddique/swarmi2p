@@ -1,7 +1,7 @@
 # Mapping the Invisible Internet (SWARM-I2P)
 
 <p align="center">
-  <img src="docs/Framework_SWARMI2P-4.jpg" alt="SWARM-I2P Framework Overview" width="850">
+  <img src="docs/Framework_SWARMI2P-4.jpg" alt="SWARM-I2P Framework Overview" width="100%">
 </p>
 
 Large-scale deployment framework, data-collection scripts, and links to the publicly released dataset that maps the **network layer** of the Invisible Internet Project (I2P).
@@ -57,10 +57,6 @@ Key ideas:
 
 ## Repository layout
 
-<p align="center">
-  <img src="docs/SWARM-I2P-ERD-ClassDiagram.jpg" alt="SWARM-I2P ERD Diagram" width="800">
-</p>
-
 > *If your folder names differ, keep this section as a guide and adjust paths in examples.*
 
 
@@ -80,10 +76,12 @@ Key ideas:
 1. **Clone** the repository
 
    ```bash
-   git clone https://github.com/abksiddique/swarmi2p.git
+   git clone https://github.com/<your-org>/<your-repo>.git
    cd <your-repo>
+
 cp config/.env.sample .env
 # set ROUTER_COUNT, PORT_RANGE_START=30000, PORT_RANGE_END=50000, etc.
+
 
 docker compose up -d
 
@@ -105,12 +103,10 @@ volumes:
   i2pdata:
 
 
-
 python scripts/collect_tunnels.py \
   --interval 60 \
   --console http://127.0.0.1:<HTTP_CONSOLE_PORT>/tunnels \
   --profiles /home/i2p/.i2p
-
 
 
 sudo tcpdump -i <vpn_nic> -w captures/swarmi2p.pcap
@@ -119,7 +115,6 @@ sudo tcpdump -i <vpn_nic> -w captures/swarmi2p.pcap
 import pandas as pd
 ct = pd.read_csv('data/2-Client-Tunnel-anonymized.csv')
 ct.head()
-
 
 import numpy as np
 freq = ct['peer_id'].value_counts()
@@ -140,17 +135,4 @@ print({'entropy': entropy, 'gini': gini})
   publisher    = {Zenodo},
   version      = {v2},
   doi          = {10.5281/zenodo.15369068},
-  url          = {https://doi.org/10.5281/zenodo.15369068}
-}
-
-
-
----
-
-✅ Now your README will display:
-
-- **Top banner** → `Framework_SWARMI2P-4.jpg`  
-- **Repository layout diagram** → `SWARM-I2P-ERD-ClassDiagram.jpg`  
-
-If you want, I can also add your **PDF (`Framework_SWARMI2P-4.pdf`) as a clickable “View PDF” button** at the top.  
-Do you want me to add that too?
+  url          = {https://
