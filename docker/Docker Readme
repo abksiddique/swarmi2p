@@ -1,0 +1,113 @@
+1. Deploy the VPS with Debian 12 os
+then sudo apt update, sudo apt upgrade
+
+Update the package list: Before installing Docker, let's update the existing package list to ensure everything is up-to-date.
+
+sudo apt update
+
+Install the required packages for Docker: Docker requires certain prerequisite packages. Let's install them.
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+Add Docker’s official GPG key: We'll now add Docker's GPG key to verify the authenticity of the Docker packages.
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+Add the Docker repository: Next, we’ll add the Docker repository to your system's sources list.
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+Update the package list again: After adding the Docker repository, you’ll need to update the package list again.
+
+sudo apt update
+
+
+Install Docker CE (Community Edition): Now, install Docker using the package manager.
+
+sudo apt install docker-ce docker-ce-cli containerd.io
+
+
+Verify Docker is installed: To ensure Docker is installed correctly, check the version.
+docker --version
+
+
+Start Docker service: If Docker isn’t already running, start the service and enable it to run on startup.
+
+sudo systemctl start docker
+sudo systemctl enable docker
+
+Add your user to the Docker group (optional): If you want to run Docker without sudo, add your current user to the docker group.
+
+Step 2: Install Portainer
+
+Create a volume for Portainer data: Portainer uses Docker volumes to store its data. Create a volume for it.
+
+docker volume create portainer_data
+
+Pull and run the Portainer container: We'll now pull the Portainer image from Docker Hub and run it. Portainer uses ports 9000 and 8000 by default.
+
+docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+Access the Portainer web interface: Once Portainer is running, you can access the web interface by navigating to the following address in your browser:
+
+http://<your-vps-ip>:9000
+
+The message indicates that your Portainer instance timed out for security reasons. This is normal behavior to prevent unauthorized access when the interface is left inactive for a while. You can restart Portainer to resolve this issue.
+
+Step to restart the Portainer instance:
+
+docker restart portainer
+
+IN PORTAINER - CLick Stack > Add Stack > Name: i2p > and past the below code in the (Web editor)
+////////////////////////////////////////////////////////////////////////////////////////////
+
+version: '3.8'
+services:
+  i2p:
+    image: geti2p/i2p
+    deploy:
+      mode: replicated
+      replicas: 20  # Number of I2P instances
+    ports:
+      - target: 4444  # HTTP Proxy
+        published: 0  # Dynamic port assignment
+        protocol: tcp
+      - target: 4445  # HTTPS Proxy
+        published: 0
+        protocol: tcp
+      - target: 6668  # IRC
+        published: 0
+        protocol: tcp
+      - target: 7652  # UDP Tunnel
+        published: 0
+        protocol: udp  # Corrected to UDP for tunnel traffic
+      - target: 7653  # UPnP
+        published: 0
+        protocol: tcp
+      - target: 7654  # SAM
+        published: 0
+        protocol: tcp
+      - target: 7656  # BOB
+        published: 0
+        protocol: tcp
+      - target: 7657  # WebConsole
+        published: 0
+        protocol: tcp
+      - target: 7658  # I2CP
+        published: 0
+        protocol: tcp
+      - target: 7659  # HTTP
+        published: 0
+        protocol: tcp
+      - target: 7660  # HTTPS
+        published: 0
+        protocol: tcp
+    volumes:
+      - /var/lib/i2p  # Anonymous volume created for each replica automatically
+    restart: unless-stopped
+    networks:
+      - i2p-network
+
+networks:
+  i2p-network:
+    driver: bridge
+
