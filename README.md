@@ -80,7 +80,7 @@ Key ideas:
 1. **Clone** the repository
 
    ```bash
-   git clone https://github.com/<your-org>/<your-repo>.git
+   git clone https://github.com/abksiddique/swarmi2p.git
    cd <your-repo>
 cp config/.env.sample .env
 # set ROUTER_COUNT, PORT_RANGE_START=30000, PORT_RANGE_END=50000, etc.
