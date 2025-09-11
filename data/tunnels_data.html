@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="icon" href="/themes/console/light/images/favicon.ico">
+<link id="pagestyle" href="/themes/console/light/console.css?2.5.2" rel="stylesheet" type="text/css">
+
+
+<title>I2P Router Console - tunnel summary</title>
+<script src="/js/ajax.js?2.5.2" type="text/javascript"></script>
+<script nonce="30d858b3" type="text/javascript">
+/* @license http://creativecommons.org/publicdomain/zero/1.0/legalcode CC0-1.0 */
+
+  var failMessage = "<hr><b>Router is down<\/b>";
+  function requestAjax1() { ajax("/xhr1.jsp?requestURI=/tunnels", "xhr", 15000); }
+  function initAjax() { setTimeout(requestAjax1, 15000);  }
+  initAjax();
+
+/* @license-end */
+</script>
+
+</head><body>
+
+
+
+
+
+<div class="routersummaryouter">
+
+<div class="routersummary">
+
+
+  <div>
+   <a href="/" target="_top">
+    <img id="i2plogo" src="/themes/console/light/images/i2plogo.png" alt="I2P Router Console" title="I2P Router Console">
+   </a>
+  </div>
+  <div id="xhr">
+<!-- for non-script -->
+
+
+
+
+
+
+
+<hr>
+<h3><a href="/netdb?r=." target="_top" title="Your Local Identity [EM8w] is your unique I2P router identity, similar to an IP address but tailored to I2P. Never disclose this to anyone, as it can reveal your real world IP.">Router Info</a></h3><hr class="b">
+<table id="sb_general"><tr title="The version of the I2P software we are running"><td align="left"><b>Version:</b></td><td align="right">2.5.2-0</td></tr>
+<tr title="How long we've been running for this session"><td align="left"><b>Uptime:</b></td><td align="right">36&nbsp;hours</td></tr></table>
+<hr>
+<h3><a href="/configupdate" target="_top" title="Configure I2P Updates">Update Status</a></h3><hr class="b">
+<h4 class="sb_info sb_update"><b>Update available:<br>Version 2.6.1<br>In-network updates disabled. Check package manager.</b></h4><hr>
+<h3><a href="/config" title="Configure router bandwidth allocation" target="_top">Bandwidth in/out</a></h3><hr class="b"><table id="sb_bandwidth">
+<tr><td align="left"><b>3&nbsp;sec:</b></td><td align="right">6.54 / 6.17&nbsp;KBps</td></tr>
+<tr><td align="left"><b>5&nbsp;min:</b></td><td align="right">5.08 / 4.71&nbsp;KBps</td></tr>
+<tr><td align="left"><b>Total:</b></td><td align="right">8.41 / 7.65&nbsp;KBps</td></tr>
+<tr><td align="left"><b>Used:</b></td><td align="right">1.12&#8239;GB / 1.02&#8239;GB</td></tr>
+</table>
+<hr>
+<h4><span class="sb_netstatus firewalled"><a href="/help#reachabilityhelp" target="_top" title="Information about the network status">Network: Firewalled</a></span></h4>
+<hr>
+<h3><a href="/configclients" target="_top" title="Configure startup of clients and webapps (services); manually start dormant services">I2P Services</a></h3>
+<hr class="b"><table id="sb_services"><tr><td><img src="/themes/console/light/images/inbox.png" height="16" width="16" alt=""></td><td align="left"><a href="/webmail" target="_top" title="Anonymous webmail client">Email</a></td></tr>
+<tr><td><img src="/themes/console/images/i2psnark.png" height="16" width="16" alt=""></td><td align="left"><a href="/torrents" target="_top" title="Built-in anonymous BitTorrent Client">Torrents</a></td></tr>
+</table>
+<hr>
+<h3><a href="/config" target="_top" title="Configure I2P Router">Configuration</a></h3><hr class="b">
+<table id="sb_internals"><tr><td>
+<a href="/dns" target="_top" title="Manage your I2P hosts file here (I2P domain name resolution)">Address&nbsp;Book</a>
+<a href="/help" target="_top" title="Router Help and FAQ">Help</a>
+<a href="/i2ptunnelmgr" target="_top" title="Local Tunnels">Hidden&nbsp;Services&nbsp;Manager</a>
+<a href="/config" target="_top" title="Configure I2P Router">Settings</a>
+<a href="/welcome" target="_top" title="New Install Wizard">Setup</a>
+</td></tr></table>
+<hr>
+<h3><a href="/config" target="_top" title="Configure I2P Router">Diagnostics</a></h3><hr class="b">
+<table id="sb_internals"><tr><td>
+<a href="/graphs" target="_top" title="Graph router performance">Graphs</a>
+<a href="/logs" target="_top" title="Health Report">Logs</a>
+<a href="/netdb" target="_top" title="Network Database Router Statistics">NetDB</a>
+<a href="/peers" target="_top" title="Show all current peer connections">Peers</a>
+<a href="/profiles" target="_top" title="Show recent peer performance profiles">Profiles</a>
+<a href="/tunnels" target="_top" title="View existing tunnels and tunnel build status">Tunnels</a>
+</td></tr></table>
+<hr>
+<h3 id="helpfaq"><a href="/help" target="_top" title="I2P Router Help &amp; FAQ">Help &amp; FAQ</a></h3><hr class="b">
+<table id="sb_help"><tr><td><a href="/viewhistory" target="_top" title="Recent development changes to the router">Changelog</a>
+<a href="/help#faq" target="_top" title="A shortened version of the official Frequently Asked Questions">FAQ</a>
+<a href="/viewlicense" target="_top" title="Information regarding software and licenses used by I2P">Licenses</a>
+<a href="/help#reachabilityhelp" target="_top" title="Information about the network status">Network</a>
+<a href="/help#sidebarhelp" target="_top" title="An introduction to the router sidebar">Sidebar</a>
+<a href="/console#trouble" target="_top" title="Troubleshooting &amp; Further Assistance">Troubleshoot</a>
+</td></tr></table>
+<hr>
+<h3><a href="/peers" target="_top" title="Show all current peer connections">Peers</a></h3><hr class="b">
+<table id="sb_peers">
+<tr title="Peers we've been talking to in the last few minutes/last hour"><td align="left"><b>Active:</b></td><td align="right">19 / 447</td></tr>
+<tr title="The number of peers available for building client tunnels"><td align="left"><b>Fast:</b></td><td align="right">47</td></tr>
+<tr title="The number of peers available for building exploratory tunnels"><td align="left"><b>High capacity:</b></td><td align="right">144</td></tr>
+<tr title="The number of peers available for network database inquiries"><td align="left"><b>Floodfill:</b></td><td align="right">297</td></tr>
+<tr title="The total number of peers in our network database"><td align="left"><b>Known:</b></td><td align="right">530</td></tr>
+</table>
+<hr>
+<form action="/tunnels" method="POST">
+<input type="hidden" name="consoleNonce" value="-700132187281694828" >
+<button type="submit" name="action" value="shutdown" class="stop" title="Shutdown" >Shutdown</button>
+</form>
+<hr>
+<h3><a href="/tunnels" target="_top" title="View existing tunnels and tunnel build status">Tunnels</a></h3><hr class="b"><table id="sb_tunnels">
+<tr title="Used for building and testing tunnels, and communicating with floodfill peers"><td align="left"><b>Exploratory:</b></td><td align="right">5</td></tr>
+<tr title="Tunnels we are using to provide or access services on the network"><td align="left"><b>Client:</b></td><td align="right">3</td></tr>
+<tr title="Tunnels we are participating in, directly contributing bandwidth to the network"><td align="left"><b>Participating:</b></td><td align="right">10</td></tr>
+<tr title="The ratio of tunnel hops we provide to tunnel hops we use - a value greater than 1.00 indicates a positive contribution to the network"><td align="left"><b>Share ratio:</b></td><td align="right">0.45</td></tr>
+</table>
+<hr>
+<h4><span class="tunnelBuildStatus">Accepting tunnels</span></h4>
+<hr>
+<h3><a href="/i2ptunnelmgr" target="_top" title="Add/remove/edit &amp; control your client and server tunnels">Local Tunnels</a></h3><hr class="b"><table id="sb_localtunnels"><tr><td align="right"><img src="/themes/console/images/client.png" alt="Client" title="Client"></td><td align="left"><b><a href="tunnels#buGW" target="_top" title="Show tunnels">shared clients</a></b></td>
+<td><img src="/themes/console/images/local_up.png" alt="Ready" title="Ready"></td></tr>
+</table>
+
+  </div>
+
+</div>
+
+</div>
+<h1>I2P Tunnel Summary</h1>
+<div class="main" id="tunnels">
+ 
+ 
+ 
+<p id="gatherstats">
+This page shows tunnels built by and routed through your router.
+<ul>
+<li>
+<b>Exploratory tunnels:</b>
+Tunnels built by your router and used for communication with the floodfill peers, building new tunnels, and testing existing tunnels.
+</li>
+<li>
+<b>Client tunnels:</b>
+Tunnels built by your router for each client's use.
+</li>
+<li>
+<b>Participating tunnels:</b>
+Tunnels built by other routers through your router.
+The quantity may vary widely depending on network demand, your shared bandwidth, and amount of locally-generated traffic.
+The recommended method for limiting participating tunnels is to change your share percentage on the <a href="config">Bandwidth Configuration page</a>.
+You may also limit the total number by setting <code>router.maxParticipatingTunnels=nnn</code> on the <a href="configadvanced">Advanced configuration page</a>.
+</li>
+<li>
+<b>Share ratio:</b>
+The number of participating tunnels you route for others, divided by the total number of hops in all your exploratory and client tunnels.
+A number greater than 1.00 means you are contributing more tunnels to the network than you are using.
+</li>
+</ul>
+</p>
+ <h3 class="tabletitle" id="exploratorytunnels"><a name="exploratory" ></a>Exploratory tunnels <a href="/configtunnels#exploratory" title="Configure tunnels">[configure]</a><a href="configstats#tunnel.Bps.exploratory.out"><img src="/themes/console/images/outbound.png" alt="Configure Graph Display" title="Configure Graph Display"></a><a href="configstats#tunnel.Bps.exploratory.in"><img src="/themes/console/images/inbound.png" alt="Configure Graph Display" title="Configure Graph Display"></a></h3>
+<table class="tunneldisplay tunnels_client"><tr><th title="Inbound or outbound?">In/Out</th><th>Expiration</th><th>Usage</th><th>Gateway</th><th align="center" colspan="2">Participants</th><th>Endpoint</th></tr>
+<tr><td class="cells" align="center"><img src="/themes/console/images/inbound.png" alt="Inbound" title="Inbound"></td><td class="cells" align="center">5&nbsp;min</td>
+<td class="cells" align="center">10&#8239;KiB</td>
+ <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="US" title="United States" src="/flags.jsp?c=us"> <tt><a title="NetDb entry" href="netdb?r=9~4uNswCGXwnfcO9Z09mLzPq2-9efbMr3wbWJRr~Vos=">9~4u</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 3855274155</span><b class="tunnel_cap" title="Bandwidth tier">P</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="CA" title="Canada" src="/flags.jsp?c=ca"> <tt><a title="NetDb entry" href="netdb?r=-9DKNTIvqBBFPnQlZtent7GbHxUtWXcRFPXnDYVnODU=">-9DK</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 1497611202</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=51~7Rz9ViE-qmkBjQJJ~AIbrs9xexvbQF37IClfLc3c=">51~7</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 2936779409</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer tunnel_local" title="Locally hosted tunnel">Local</span>&nbsp;<span class="tunnel_id" title="Tunnel identity">3429634199</span><b class="tunnel_cap" title="Bandwidth tier"></b></td></tr>
+<tr><td class="cells" align="center"><img src="/themes/console/images/inbound.png" alt="Inbound" title="Inbound"></td><td class="cells" align="center">5&nbsp;min</td>
+<td class="cells" align="center">8&#8239;KiB</td>
+ <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="NL" title="Netherlands" src="/flags.jsp?c=nl"> <tt><a title="NetDb entry" href="netdb?r=YTW3WcXjQXyvcryWY8jr~3obVq9Ip9EeKSnYtnqcKoQ=">YTW3</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 2284855464</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="IL" title="Israel" src="/flags.jsp?c=il"> <tt><a title="NetDb entry" href="netdb?r=GM~eVKtfNFs4yO~~MZwvKSg5Qd2VoGm2Rj-2V5nC7AY=">GM~e</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 2701397024</span><b class="tunnel_cap" title="Bandwidth tier">P</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="FI" title="Finland" src="/flags.jsp?c=fi"> <tt><a title="NetDb entry" href="netdb?r=lCLGfjIbD9FwkW6MH-guS5Gkjd8ZPPgvK5OHVDauV~8=">lCLG</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 2660376306</span><b class="tunnel_cap" title="Bandwidth tier">P</b></span></td> <td class="cells" align="center"><span class="tunnel_peer tunnel_local" title="Locally hosted tunnel">Local</span>&nbsp;<span class="tunnel_id" title="Tunnel identity">4040020714</span><b class="tunnel_cap" title="Bandwidth tier"></b></td></tr>
+<tr><td class="cells" align="center"><img src="/themes/console/images/outbound.png" alt="Outbound" title="Outbound"></td><td class="cells" align="center">68&nbsp;sec</td>
+<td class="cells" align="center">23&#8239;KiB</td>
+ <td class="cells" align="center"><span class="tunnel_peer tunnel_local" title="Locally hosted tunnel">Local</span>&nbsp;<span class="tunnel_id" title="Tunnel identity">823942163</span><b class="tunnel_cap" title="Bandwidth tier"></b></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="DE" title="Germany" src="/flags.jsp?c=de"> <tt><a title="NetDb entry" href="netdb?r=LbD0~ybh7TlyqLGcOqV3gWuz0-I~rayuzSkj4Uh00JE=">LbD0</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 665509344</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img class="unknownflag" height="11" width="16" alt="??" src="/flags.jsp?c=a0" title="unknown"> <tt><a title="NetDb entry" href="netdb?r=NFqjSQ8PT-no7oRIlePmTdbX5LRzaNLfQz6IYoSzf40=">NFqj</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 1485424291</span><b class="tunnel_cap" title="Bandwidth tier">O</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="GB" title="United Kingdom" src="/flags.jsp?c=gb"> <tt><a title="NetDb entry" href="netdb?r=ff8S3e3IG9aWZ8UuEGyV2sIXpVrY8QxyRqn5riz-5LE=">ff8S</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"></span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td></tr>
+<tr><td class="cells" align="center"><img src="/themes/console/images/outbound.png" alt="Outbound" title="Outbound"></td><td class="cells" align="center">6&nbsp;min</td>
+<td class="cells" align="center">7&#8239;KiB</td>
+ <td class="cells" align="center"><span class="tunnel_peer tunnel_local" title="Locally hosted tunnel">Local</span>&nbsp;<span class="tunnel_id" title="Tunnel identity">2743336054</span><b class="tunnel_cap" title="Bandwidth tier"></b></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="GB" title="United Kingdom" src="/flags.jsp?c=gb"> <tt><a title="NetDb entry" href="netdb?r=hHIu8KmCsOigARCEh57FZY7qeaFvM0KuiKYY3ythDvw=">hHIu</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 985099819</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="FI" title="Finland" src="/flags.jsp?c=fi"> <tt><a title="NetDb entry" href="netdb?r=SLIdpSD6HI4l1ILR525bStqCOCek-NcXHDiEMGjHxwA=">SLId</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 1054509348</span><b class="tunnel_cap" title="Bandwidth tier">P</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="SE" title="Sweden" src="/flags.jsp?c=se"> <tt><a title="NetDb entry" href="netdb?r=eOu1s7uAtkAJZx6zYQKCtuZl5MpObdVS84ksgVYSGbU=">eOu1</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"></span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td></tr>
+<tr><td class="cells" align="center"><img src="/themes/console/images/outbound.png" alt="Outbound" title="Outbound"></td><td class="cells" align="center">8&nbsp;min</td>
+<td class="cells" align="center">1&#8239;KiB</td>
+ <td class="cells" align="center"><span class="tunnel_peer tunnel_local" title="Locally hosted tunnel">Local</span>&nbsp;<span class="tunnel_id" title="Tunnel identity">1254271290</span><b class="tunnel_cap" title="Bandwidth tier"></b></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="IL" title="Israel" src="/flags.jsp?c=il"> <tt><a title="NetDb entry" href="netdb?r=GM~eVKtfNFs4yO~~MZwvKSg5Qd2VoGm2Rj-2V5nC7AY=">GM~e</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 2532098905</span><b class="tunnel_cap" title="Bandwidth tier">P</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="DE" title="Germany" src="/flags.jsp?c=de"> <tt><a title="NetDb entry" href="netdb?r=LbD0~ybh7TlyqLGcOqV3gWuz0-I~rayuzSkj4Uh00JE=">LbD0</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 1361120966</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="PL" title="Poland" src="/flags.jsp?c=pl"> <tt><a title="NetDb entry" href="netdb?r=54TPHaMUYjwHNwnR7ec0MUu5f6n3ZgLN5sa1Aw0K~eo=">54TP</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"></span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td></tr>
+</table>
+<div class="statusnotes"><center><b>Lifetime bandwidth usage:&nbsp;&nbsp;47.1&#8239;MiB in, 65.6&#8239;MiB out</b></center></div><h3 class="tabletitle" id="buGW" >Client tunnels for shared clients <a href="/configtunnels#buGW" title="Configure tunnels for session">[configure]</a><a href="configstats#tunnel.Bps.shared clients.out"><img src="/themes/console/images/outbound.png" alt="Configure Graph Display" title="Configure Graph Display"></a><a href="configstats#tunnel.Bps.shared clients.in"><img src="/themes/console/images/inbound.png" alt="Configure Graph Display" title="Configure Graph Display"></a></h3>
+<table class="tunneldisplay tunnels_client"><tr><th title="Inbound or outbound?">In/Out</th><th>Expiration</th><th>Usage</th><th>Gateway</th><th align="center" colspan="2">Participants</th><th>Endpoint</th></tr>
+<tr><td class="cells" align="center"><img src="/themes/console/images/inbound.png" alt="Inbound" title="Inbound"></td><td class="cells" align="center">7&nbsp;min</td>
+<td class="cells" align="center">5&#8239;KiB</td>
+ <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=1of7m4oJYjbCyiGHIYZ5W8SIDI-ifvYsYo1lLJG22I0=">1of7</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 4244368853</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="CA" title="Canada" src="/flags.jsp?c=ca"> <tt><a title="NetDb entry" href="netdb?r=VJkEAymAtjF9GmdMC8sXX-J9skL3I5mAcNuHa2CCTK4=">VJkE</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 2513049158</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=j7Di1coM5mnR4L43hI3~szzAUxKJZsu2fup8bNX3CaA=">j7Di</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 240580445</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer tunnel_local" title="Locally hosted tunnel">Local</span>&nbsp;<span class="tunnel_id" title="Tunnel identity">3198378490</span><b class="tunnel_cap" title="Bandwidth tier"></b></td></tr>
+<tr><td class="cells" align="center"><img src="/themes/console/images/outbound.png" alt="Outbound" title="Outbound"></td><td class="cells" align="center">48&nbsp;sec</td>
+<td class="cells" align="center">22&#8239;KiB</td>
+ <td class="cells" align="center"><span class="tunnel_peer tunnel_local" title="Locally hosted tunnel">Local</span>&nbsp;<span class="tunnel_id" title="Tunnel identity">4103647505</span><b class="tunnel_cap" title="Bandwidth tier"></b></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="AT" title="Austria" src="/flags.jsp?c=at"> <tt><a title="NetDb entry" href="netdb?r=YCJP~7sXI5~dioNBs-vmh3o9HycEkM6bnroVYO4UA3g=">YCJP</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 3928835633</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img class="unknownflag" height="11" width="16" alt="??" src="/flags.jsp?c=a0" title="unknown"> <tt><a title="NetDb entry" href="netdb?r=xc80EuBAnCblqGjpV4d1yKIj2Khu3BWthG4Kz~J0Cwg=">xc80</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 2757903514</span><b class="tunnel_cap" title="Bandwidth tier">P</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="DE" title="Germany" src="/flags.jsp?c=de"> <tt><a title="NetDb entry" href="netdb?r=G1eOUr~6JpdQP9hAnpBe3NZsb3YB1PWhNi6y2rifVx4=">G1eO</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"></span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td></tr>
+<tr><td class="cells" align="center"><img src="/themes/console/images/outbound.png" alt="Outbound" title="Outbound"></td><td class="cells" align="center">9&nbsp;min</td>
+<td class="cells" align="center">0&#8239;B</td>
+ <td class="cells" align="center"><span class="tunnel_peer tunnel_local" title="Locally hosted tunnel">Local</span>&nbsp;<span class="tunnel_id" title="Tunnel identity">3014615567</span><b class="tunnel_cap" title="Bandwidth tier"></b></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="AT" title="Austria" src="/flags.jsp?c=at"> <tt><a title="NetDb entry" href="netdb?r=YCJP~7sXI5~dioNBs-vmh3o9HycEkM6bnroVYO4UA3g=">YCJP</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 3702886113</span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img class="unknownflag" height="11" width="16" alt="??" src="/flags.jsp?c=a0" title="unknown"> <tt><a title="NetDb entry" href="netdb?r=xc80EuBAnCblqGjpV4d1yKIj2Khu3BWthG4Kz~J0Cwg=">xc80</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"> 2659591735</span><b class="tunnel_cap" title="Bandwidth tier">P</b></span></td> <td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="DE" title="Germany" src="/flags.jsp?c=de"> <tt><a title="NetDb entry" href="netdb?r=G1eOUr~6JpdQP9hAnpBe3NZsb3YB1PWhNi6y2rifVx4=">G1eO</a></tt></span>&nbsp;<span class="nowrap"><span class="tunnel_id" title="Tunnel identity"></span><b class="tunnel_cap" title="Bandwidth tier">X</b></span></td></tr>
+</table>
+<div class="statusnotes"><center><b>Lifetime bandwidth usage:&nbsp;&nbsp;11.22&#8239;MiB in, 28.6&#8239;MiB out</b></center></div><h3 class="tabletitle" id="participating">Participating tunnels</h3>
+<table class="tunneldisplay tunnels_participating"><tr><th>Receive on</th><th>From</th><th>Send on</th><th>To</th><th>Expiration</th><th>Usage</th><th>Rate</th><th>Role</th></tr>
+<tr><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">929018976</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="NL" title="Netherlands" src="/flags.jsp?c=nl"> <tt><a title="NetDb entry" href="netdb?r=IiN-TYoM-NRjlAfC0hCVSCgxKS8xeM5F3xlco8tFxKk=">IiN-</a></tt></span></td><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">3426006293</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="CH" title="Switzerland" src="/flags.jsp?c=ch"> <tt><a title="NetDb entry" href="netdb?r=lr1sInBKgYZh7vVEgnmykNTnyKg7lIfjh6~oAbJrvug=">lr1s</a></tt></span></td><td class="cells" align="center">(grace period)</td><td class="cells" align="center">1.29&#8239;MiB</td><td class="cells" align="center">2.26&#8239;KBps</td><td class="cells" align="center">Participant</td></tr>
+<tr><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">2191482753</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="CH" title="Switzerland" src="/flags.jsp?c=ch"> <tt><a title="NetDb entry" href="netdb?r=lr1sInBKgYZh7vVEgnmykNTnyKg7lIfjh6~oAbJrvug=">lr1s</a></tt></span></td><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">2875517556</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="NL" title="Netherlands" src="/flags.jsp?c=nl"> <tt><a title="NetDb entry" href="netdb?r=IiN-TYoM-NRjlAfC0hCVSCgxKS8xeM5F3xlco8tFxKk=">IiN-</a></tt></span></td><td class="cells" align="center">(grace period)</td><td class="cells" align="center">1.25&#8239;MiB</td><td class="cells" align="center">2.18&#8239;KBps</td><td class="cells" align="center">Participant</td></tr>
+<tr><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">1293718428</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="US" title="United States" src="/flags.jsp?c=us"> <tt><a title="NetDb entry" href="netdb?r=wliDyQAGUCHv0TvXxQSW9mUYykOMgDY1DOehYZIZ~Q8=">wliD</a></tt></span></td><td class="cells">&nbsp;</td><td class="cells">&nbsp;</td><td class="cells" align="center">6&nbsp;sec</td><td class="cells" align="center">41&#8239;KiB</td><td class="cells" align="center">70&#8239;Bps</td><td class="cells" align="center">Outbound Endpoint</td></tr>
+<tr><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">343859661</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="CH" title="Switzerland" src="/flags.jsp?c=ch"> <tt><a title="NetDb entry" href="netdb?r=lr1sInBKgYZh7vVEgnmykNTnyKg7lIfjh6~oAbJrvug=">lr1s</a></tt></span></td><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">1582965532</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="NL" title="Netherlands" src="/flags.jsp?c=nl"> <tt><a title="NetDb entry" href="netdb?r=IiN-TYoM-NRjlAfC0hCVSCgxKS8xeM5F3xlco8tFxKk=">IiN-</a></tt></span></td><td class="cells" align="center">9&nbsp;min</td><td class="cells" align="center">38&#8239;KiB</td><td class="cells" align="center">1.22&#8239;KBps</td><td class="cells" align="center">Participant</td></tr>
+<tr><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">2007775374</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=TckCiL3WTHFXbdPIoia~mdyPaauuH~oxtcfrjAvNzwM=">TckC</a></tt></span></td><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">205510630</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=VGA6c9Z66VB4ynrY1Pw4exmxz9QhndKCdo-TexY3YgY=">VGA6</a></tt></span></td><td class="cells" align="center">(grace period)</td><td class="cells" align="center">34&#8239;KiB</td><td class="cells" align="center">58&#8239;Bps</td><td class="cells" align="center">Participant</td></tr>
+<tr><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">702340248</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="NL" title="Netherlands" src="/flags.jsp?c=nl"> <tt><a title="NetDb entry" href="netdb?r=IiN-TYoM-NRjlAfC0hCVSCgxKS8xeM5F3xlco8tFxKk=">IiN-</a></tt></span></td><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">73307353</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="CH" title="Switzerland" src="/flags.jsp?c=ch"> <tt><a title="NetDb entry" href="netdb?r=lr1sInBKgYZh7vVEgnmykNTnyKg7lIfjh6~oAbJrvug=">lr1s</a></tt></span></td><td class="cells" align="center">9&nbsp;min</td><td class="cells" align="center">27&#8239;KiB</td><td class="cells" align="center">1.63&#8239;KBps</td><td class="cells" align="center">Participant</td></tr>
+<tr><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">2583112934</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=bpCvDcSy7gy88U1PUte33I7swthZ2K9MkdAFE3fjuao=">bpCv</a></tt></span></td><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">4124012616</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="US" title="United States" src="/flags.jsp?c=us"> <tt><a title="NetDb entry" href="netdb?r=YZBO8koLRFo4Cj4~vvZu44Zz1hzb3AB0-7iiRtrMpck=">YZBO</a></tt></span></td><td class="cells" align="center">8&nbsp;min</td><td class="cells" align="center">7&#8239;KiB</td><td class="cells" align="center">64&#8239;Bps</td><td class="cells" align="center">Participant</td></tr>
+<tr><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">333036563</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=TckCiL3WTHFXbdPIoia~mdyPaauuH~oxtcfrjAvNzwM=">TckC</a></tt></span></td><td class="cells" align="center" title="Tunnel identity"><span class="tunnel_id">2237080558</span></td><td class="cells" align="center"><span class="tunnel_peer"><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=VGA6c9Z66VB4ynrY1Pw4exmxz9QhndKCdo-TexY3YgY=">VGA6</a></tt></span></td><td class="cells" align="center">9&nbsp;min</td><td class="cells" align="center">1&#8239;KiB</td><td class="cells" align="center">44&#8239;Bps</td><td class="cells" align="center">Participant</td></tr>
+</table>
+<div class="statusnotes"><b>Inactive participating tunnels:&nbsp;&nbsp;2</b></div>
+<div class="statusnotes"><b>Lifetime bandwidth usage:&nbsp;&nbsp;853&#8239;MiB</b></div>
+<h3 class="tabletitle">Bandwidth Tiers</h3>
+<table id="tunnel_defs"><tbody><tr><td>&nbsp;</td><td><span class="tunnel_cap"><b>L</b></span></td><td>12 - 48 KBps shared bandwidth</td><td><span class="tunnel_cap"><b>M</b></span></td><td>49 - 65 KBps shared bandwidth</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><span class="tunnel_cap"><b>N</b></span></td><td>66 - 130 KBps shared bandwidth</td><td><span class="tunnel_cap"><b>O</b></span></td><td>131 - 261 KBps shared bandwidth</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><span class="tunnel_cap"><b>P</b></span></td><td>262 - 2047 KBps shared bandwidth</td><td><span class="tunnel_cap"><b>X</b></span></td><td>Over 2048 KBps shared bandwidth</td><td>&nbsp;</td></tr></tbody></table>
+</div></body></html>

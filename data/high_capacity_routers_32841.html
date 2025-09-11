@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="icon" href="/themes/console/light/images/favicon.ico">
+<link id="pagestyle" href="/themes/console/light/console.css?2.5.2" rel="stylesheet" type="text/css">
+<title>I2P Router Console - peer profiles</title><script src="/js/ajax.js?2.5.2" type="text/javascript"></script>
+<script nonce="6e346a67" type="text/javascript">
+/* @license http://creativecommons.org/publicdomain/zero/1.0/legalcode CC0-1.0 */
+
+  var failMessage = "<hr><b>Router is down<\/b>";
+  function requestAjax1() { ajax("/xhr1.jsp?requestURI=/profiles", "xhr", 15000); }
+  function initAjax() { setTimeout(requestAjax1, 15000);  }
+  initAjax();
+
+/* @license-end */
+</script></head><body>
+<div class="routersummaryouter">
+<div class="routersummary">
+<div>
+   <a href="/" target="_top">
+    <img id="i2plogo" src="/themes/console/light/images/i2plogo.png" alt="I2P Router Console" title="I2P Router Console">
+   </a>
+  </div>
+  <div id="xhr">
+<!-- for non-script -->
+<hr>
+<h3><a href="/netdb?r=." target="_top" title="Your Local Identity [EM8w] is your unique I2P router identity, similar to an IP address but tailored to I2P. Never disclose this to anyone, as it can reveal your real world IP.">Router Info</a></h3><hr class="b">
+<table id="sb_general"><tr title="The version of the I2P software we are running"><td align="left"><b>Version:</b></td><td align="right">2.5.2-0</td></tr>
+<tr title="How long we've been running for this session"><td align="left"><b>Uptime:</b></td><td align="right">2&nbsp;days</td></tr></table>
+<hr>
+<h3><a href="/configupdate" target="_top" title="Configure I2P Updates">Update Status</a></h3><hr class="b">
+<h4 class="sb_info sb_update"><b>Update available:<br>Version 2.6.1<br>In-network updates disabled. Check package manager.</b></h4><hr>
+<h3><a href="/config" title="Configure router bandwidth allocation" target="_top">Bandwidth in/out</a></h3><hr class="b"><table id="sb_bandwidth">
+<tr><td align="left"><b>3&nbsp;sec:</b></td><td align="right">0.30 / 0.32&nbsp;KBps</td></tr>
+<tr><td align="left"><b>5&nbsp;min:</b></td><td align="right">0.21 / 0.23&nbsp;KBps</td></tr>
+<tr><td align="left"><b>Total:</b></td><td align="right">6.40 / 5.84&nbsp;KBps</td></tr>
+<tr><td align="left"><b>Used:</b></td><td align="right">1.29&#8239;GB / 1.18&#8239;GB</td></tr>
+</table>
+<hr>
+<h4><span class="sb_netstatus firewalled"><a href="/help#reachabilityhelp" target="_top" title="Information about the network status">Network: Firewalled</a></span></h4>
+<hr>
+<h3><a href="/configclients" target="_top" title="Configure startup of clients and webapps (services); manually start dormant services">I2P Services</a></h3>
+<hr class="b"><table id="sb_services"><tr><td><img src="/themes/console/light/images/inbox.png" height="16" width="16" alt=""></td><td align="left"><a href="/webmail" target="_top" title="Anonymous webmail client">Email</a></td></tr>
+<tr><td><img src="/themes/console/images/i2psnark.png" height="16" width="16" alt=""></td><td align="left"><a href="/torrents" target="_top" title="Built-in anonymous BitTorrent Client">Torrents</a></td></tr>
+</table>
+<hr>
+<h3><a href="/config" target="_top" title="Configure I2P Router">Configuration</a></h3><hr class="b">
+<table id="sb_internals"><tr><td>
+<a href="/dns" target="_top" title="Manage your I2P hosts file here (I2P domain name resolution)">Address&nbsp;Book</a>
+<a href="/help" target="_top" title="Router Help and FAQ">Help</a>
+<a href="/i2ptunnelmgr" target="_top" title="Local Tunnels">Hidden&nbsp;Services&nbsp;Manager</a>
+<a href="/config" target="_top" title="Configure I2P Router">Settings</a>
+<a href="/welcome" target="_top" title="New Install Wizard">Setup</a>
+</td></tr></table>
+<hr>
+<h3><a href="/config" target="_top" title="Configure I2P Router">Diagnostics</a></h3><hr class="b">
+<table id="sb_internals"><tr><td>
+<a href="/graphs" target="_top" title="Graph router performance">Graphs</a>
+<a href="/logs" target="_top" title="Health Report">Logs</a>
+<a href="/netdb" target="_top" title="Network Database Router Statistics">NetDB</a>
+<a href="/peers" target="_top" title="Show all current peer connections">Peers</a>
+<a href="/profiles" target="_top" title="Show recent peer performance profiles">Profiles</a>
+<a href="/tunnels" target="_top" title="View existing tunnels and tunnel build status">Tunnels</a>
+</td></tr></table>
+<hr>
+<h3 id="helpfaq"><a href="/help" target="_top" title="I2P Router Help &amp; FAQ">Help &amp; FAQ</a></h3><hr class="b">
+<table id="sb_help"><tr><td><a href="/viewhistory" target="_top" title="Recent development changes to the router">Changelog</a>
+<a href="/help#faq" target="_top" title="A shortened version of the official Frequently Asked Questions">FAQ</a>
+<a href="/viewlicense" target="_top" title="Information regarding software and licenses used by I2P">Licenses</a>
+<a href="/help#reachabilityhelp" target="_top" title="Information about the network status">Network</a>
+<a href="/help#sidebarhelp" target="_top" title="An introduction to the router sidebar">Sidebar</a>
+<a href="/console#trouble" target="_top" title="Troubleshooting &amp; Further Assistance">Troubleshoot</a>
+</td></tr></table>
+<hr>
+<h3><a href="/peers" target="_top" title="Show all current peer connections">Peers</a></h3><hr class="b">
+<table id="sb_peers">
+<tr title="Peers we've been talking to in the last few minutes/last hour"><td align="left"><b>Active:</b></td><td align="right">11 / 428</td></tr>
+<tr title="The number of peers available for building client tunnels"><td align="left"><b>Fast:</b></td><td align="right">31</td></tr>
+<tr title="The number of peers available for building exploratory tunnels"><td align="left"><b>High capacity:</b></td><td align="right">118</td></tr>
+<tr title="The number of peers available for network database inquiries"><td align="left"><b>Floodfill:</b></td><td align="right">217</td></tr>
+<tr title="The total number of peers in our network database"><td align="left"><b>Known:</b></td><td align="right">349</td></tr>
+</table>
+<hr>
+<form action="/profiles" method="POST">
+<input type="hidden" name="consoleNonce" value="-700132187281694828" >
+<button type="submit" name="action" value="shutdown" class="stop" title="Shutdown" >Shutdown</button>
+</form>
+<hr>
+<h3><a href="/tunnels" target="_top" title="View existing tunnels and tunnel build status">Tunnels</a></h3><hr class="b"><table id="sb_tunnels">
+<tr title="Used for building and testing tunnels, and communicating with floodfill peers"><td align="left"><b>Exploratory:</b></td><td align="right">4</td></tr>
+<tr title="Tunnels we are using to provide or access services on the network"><td align="left"><b>Client:</b></td><td align="right">2</td></tr>
+<tr title="Tunnels we are participating in, directly contributing bandwidth to the network"><td align="left"><b>Participating:</b></td><td align="right">1</td></tr>
+<tr title="The ratio of tunnel hops we provide to tunnel hops we use - a value greater than 1.00 indicates a positive contribution to the network"><td align="left"><b>Share ratio:</b></td><td align="right">0.06</td></tr>
+</table>
+<hr>
+<h4><span class="tunnelBuildStatus">Accepting tunnels</span></h4>
+<hr>
+<h3><a href="/i2ptunnelmgr" target="_top" title="Add/remove/edit &amp; control your client and server tunnels">Local Tunnels</a></h3><hr class="b"><table id="sb_localtunnels"><tr><td align="right"><img src="/themes/console/images/client.png" alt="Client" title="Client"></td><td align="left"><b><a href="tunnels#buGW" target="_top" title="Show tunnels">shared clients</a></b></td>
+<td><img src="/themes/console/images/local_up.png" alt="Ready" title="Ready"></td></tr>
+</table></div>
+</div>
+</div>
+<h1>I2P Network Peer Profiles</h1>
+<div class="main" id="profiles"><div class="wideload">
+ <div class="confignav" id="confignav"><span class="tab2">High Capacity</span>
+<span class="tab"><a href="profiles?f=2">Floodfill</a></span>
+<span class="tab"><a href="profiles?f=3">Banned</a></span>
+<span class="tab"><a href="profiles?f=1">All</a></span>
+</div><p id="profiles_overview" class="infohelp">Showing 12 recent profiles.
+Hiding 392 older profiles.
+<a href="/profiles?f=1">Hiding 24 standard profiles.</a>
+</p><div class="widescroll"><table id="profilelist"><tr><th>Peer</th><th>Groups</th><th>Caps</th><th>Version</th><th>Speed</th><th>Capacity</th><th>Integration</th><th>Status</th><th>View/Edit</th></tr><tr><td align="center" nowrap><img height="11" width="16" alt="US" title="United States" src="/flags.jsp?c=us"> <tt><a title="NetDb entry" href="netdb?r=CROpLE~b0floZ1-rloPMJ5rGqnUE0D7DWMDA4PPGpJo=">CROp</a></tt></td><td align="center">Fast, High Capacity<td align="right">XR<td align="right">0.9.63</td><td align="right">75.91</td><td align="right">8.48</td><td align="right">--</td><td align="center"> 2/5 Test Fails&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=CROpLE~b0floZ1-rloPMJ5rGqnUE0D7DWMDA4PPGpJo=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=CROpLE~b0floZ1-rloPMJ5rGqnUE0D7DWMDA4PPGpJo=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="US" title="United States" src="/flags.jsp?c=us"> <tt><a title="NetDb entry" href="netdb?r=JPAW5xDojPhJHd0E3Fw23BLCbmExxQhy1bCX4onWRsA=">JPAW</a></tt></td><td align="center">Fast, High Capacity<td align="right">PR<td align="right">0.9.63</td><td align="right">304.31</td><td align="right">8.88</td><td align="right">--</td><td align="center">OK&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=JPAW5xDojPhJHd0E3Fw23BLCbmExxQhy1bCX4onWRsA=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=JPAW5xDojPhJHd0E3Fw23BLCbmExxQhy1bCX4onWRsA=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="DE" title="Germany" src="/flags.jsp?c=de"> <tt><a title="NetDb entry" href="netdb?r=JkAwRMVDdEppoAC0CDgoaZo3TdaroXxPKEtSuBUBw4Y=">JkAw</a></tt></td><td align="center">Fast, High Capacity<td align="right">XR<td align="right">0.9.62</td><td align="right">441.13</td><td align="right">12.30</td><td align="right">--</td><td align="center"> 2/10 Test Fails&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=JkAwRMVDdEppoAC0CDgoaZo3TdaroXxPKEtSuBUBw4Y=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=JkAwRMVDdEppoAC0CDgoaZo3TdaroXxPKEtSuBUBw4Y=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="NL" title="Netherlands" src="/flags.jsp?c=nl"> <tt><a title="NetDb entry" href="netdb?r=KniYmzmscDEuRK-rSbj0sumUxrmSpBikAoN6E9gbCR8=">KniY</a></tt></td><td align="center">Fast, High Capacity<td align="right">PR<td align="right">0.9.62</td><td align="right">244.48</td><td align="right">17.00</td><td align="right">--</td><td align="center">OK&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=KniYmzmscDEuRK-rSbj0sumUxrmSpBikAoN6E9gbCR8=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=KniYmzmscDEuRK-rSbj0sumUxrmSpBikAoN6E9gbCR8=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="NL" title="Netherlands" src="/flags.jsp?c=nl"> <tt><a title="NetDb entry" href="netdb?r=TDQO~djJ4hRVb26rrKpTzqNnGmlyZyvbEKxxEFfY8UQ=">TDQO</a></tt></td><td align="center">Fast, High Capacity, Integrated<td align="right">XfR<td align="right">0.9.63</td><td align="right">219.41</td><td align="right">13.72</td><td align="right">15.00</td><td align="center"> 2/7 Test Fails&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=TDQO~djJ4hRVb26rrKpTzqNnGmlyZyvbEKxxEFfY8UQ=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=TDQO~djJ4hRVb26rrKpTzqNnGmlyZyvbEKxxEFfY8UQ=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=VQ0pJc5iLTOsFk3MDVIhi8mRbQROL2p85htCI~2ynMc=">VQ0p</a></tt></td><td align="center">Fast, High Capacity, Integrated<td align="right">XfR<td align="right">0.9.63</td><td align="right">163.84</td><td align="right">12.90</td><td align="right">15.00</td><td align="center">OK&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=VQ0pJc5iLTOsFk3MDVIhi8mRbQROL2p85htCI~2ynMc=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=VQ0pJc5iLTOsFk3MDVIhi8mRbQROL2p85htCI~2ynMc=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="US" title="United States" src="/flags.jsp?c=us"> <tt><a title="NetDb entry" href="netdb?r=c4HRxoNbPuP4tm8xeu-ftK3pM5x9CrjEO6GxLQDzLTw=">c4HR</a></tt></td><td align="center">Fast, High Capacity<td align="right">XR<td align="right">0.9.63</td><td align="right">227.40</td><td align="right">14.50</td><td align="right">--</td><td align="center"> 2/10 Test Fails&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=c4HRxoNbPuP4tm8xeu-ftK3pM5x9CrjEO6GxLQDzLTw=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=c4HRxoNbPuP4tm8xeu-ftK3pM5x9CrjEO6GxLQDzLTw=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="NL" title="Netherlands" src="/flags.jsp?c=nl"> <tt><a title="NetDb entry" href="netdb?r=tEXBKG8petD6igmCnUN6xketcFgOLO0cdHY~QlHXxg8=">tEXB</a></tt></td><td align="center">Fast, High Capacity<td align="right">PR<td align="right">0.9.62</td><td align="right">76.53</td><td align="right">11.50</td><td align="right">--</td><td align="center">OK&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=tEXBKG8petD6igmCnUN6xketcFgOLO0cdHY~QlHXxg8=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=tEXBKG8petD6igmCnUN6xketcFgOLO0cdHY~QlHXxg8=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="US" title="United States" src="/flags.jsp?c=us"> <tt><a title="NetDb entry" href="netdb?r=9ME73qTJZMdqYCvG6SE-P-imsdnPKasHVRziS6u2ctA=">9ME7</a></tt></td><td align="center">Fast, High Capacity<td align="right">PR<td align="right">0.9.63</td><td align="right">130.93</td><td align="right">6.81</td><td align="right">--</td><td align="center">OK&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=9ME73qTJZMdqYCvG6SE-P-imsdnPKasHVRziS6u2ctA=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=9ME73qTJZMdqYCvG6SE-P-imsdnPKasHVRziS6u2ctA=">+-</a></td>
+</tr><tr><td colspan="9"><hr></td></tr>
+<tr><td align="center" nowrap><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=CXQ5MrP8NtFj0Dwegm9tfvPdycRarxZbtPOHFJrt1rE=">CXQ5</a></tt></td><td align="center">High Capacity<td align="right">XfR<td align="right">0.9.62</td><td align="right">50.02</td><td align="right">8.35</td><td align="right">--</td><td align="center">OK&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=CXQ5MrP8NtFj0Dwegm9tfvPdycRarxZbtPOHFJrt1rE=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=CXQ5MrP8NtFj0Dwegm9tfvPdycRarxZbtPOHFJrt1rE=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="RU" title="Russian Federation" src="/flags.jsp?c=ru"> <tt><a title="NetDb entry" href="netdb?r=WTY7AQd8JdO83MsBuPYvBOGMDzMe~ybbc3ahyCUG7Ik=">WTY7</a></tt></td><td align="center">High Capacity<td align="right">PfR<td align="right">0.9.62</td><td align="right">--</td><td align="right">7.76</td><td align="right">--</td><td align="center">OK&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=WTY7AQd8JdO83MsBuPYvBOGMDzMe~ybbc3ahyCUG7Ik=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=WTY7AQd8JdO83MsBuPYvBOGMDzMe~ybbc3ahyCUG7Ik=">+-</a></td>
+</tr><tr><td align="center" nowrap><img height="11" width="16" alt="US" title="United States" src="/flags.jsp?c=us"> <tt><a title="NetDb entry" href="netdb?r=2s3xCwk9FyNrexJi6xrGkbImQRkpT1iH4vm5Q5GWUYo=">2s3x</a></tt></td><td align="center">High Capacity, Integrated<td align="right">XfR<td align="right">0.9.62</td><td align="right">46.00</td><td align="right">8.01</td><td align="right">10.00</td><td align="center">OK&nbsp;</td><td nowrap align="center"><a href="viewprofile?peer=2s3xCwk9FyNrexJi6xrGkbImQRkpT1iH4vm5Q5GWUYo=">profile</a>&nbsp;<a title="Configure peer" href="configpeer?peer=2s3xCwk9FyNrexJi6xrGkbImQRkpT1iH4vm5Q5GWUYo=">+-</a></td>
+</tr></table></div><h3 class="tabletitle">Thresholds</h3>
+<table id="thresholds"><tbody><tr><th><b>Speed: </b>70.98</th><th><b>Capacity: </b>5.00</th><th><b>Integration: </b>1.00</th></tr><tr><td>9 fast peers</td><td>12 high capacity peers</td><td>3 integrated peers</td></tr></tbody></table>
+<h3 class="tabletitle">Definitions</h3>
+<table id="profile_defs"><tbody><tr><td><b>Groups:</b></td><td>as determined by the profile organizer</td></tr><tr><td><b>Caps:</b></td><td>capabilities in the netDb, not used to determine profiles</td></tr><tr><td colspan="2"><table id="capabilities_key"><tbody><tr><td>&nbsp;</td><td><b>D</b></td><td>Congested</td><td><b>E</b></td><td>Severely congested</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><b>f</b></td><td>Floodfill</td><td><b>G</b></td><td>Not accepting tunnels</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><b>K</b></td><td>Under 12 KBps shared bandwidth</td><td><b>L</b></td><td>12 - 48 KBps shared bandwidth</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><b>M</b></td><td>49 - 65 KBps shared bandwidth</td><td><b>N</b></td><td>66 - 130 KBps shared bandwidth</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><b>O</b></td><td>131 - 261 KBps shared bandwidth</td><td><b>P</b></td><td>262 - 2047 KBps shared bandwidth</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><b>R</b></td><td>Reachable</td><td><b>U</b></td><td>Unreachable</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td><b>X</b></td><td>Over 2048 KBps shared bandwidth</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></td></tr><tr><td><b>speed:</b></td><td>peak throughput (bytes per second) over a 1 minute period that the peer has sustained in a single tunnel</td></tr><tr><td><b>capacity:</b></td><td>how many tunnels can we ask them to join in an hour?</td></tr><tr><td><b>integration:</b></td><td>how many new peers have they told us about lately?</td></tr><tr><td><b>status:</b></td><td>is the peer banned, or unreachable, or failing tunnel tests?</td></tr></tbody></table>
+</div></div></body></html>
