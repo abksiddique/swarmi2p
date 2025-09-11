@@ -60,6 +60,8 @@ Key ideas:
 > *If your folder names differ, keep this section as a guide and adjust paths in examples.*
 
 
+
+
 ---
 
 ## Prerequisites
@@ -79,11 +81,13 @@ Key ideas:
    git clone https://github.com/<your-org>/<your-repo>.git
    cd <your-repo>
 
+
 cp config/.env.sample .env
 # set ROUTER_COUNT, PORT_RANGE_START=30000, PORT_RANGE_END=50000, etc.
 
 
 docker compose up -d
+
 
 services:
   i2p-router:
@@ -116,6 +120,7 @@ import pandas as pd
 ct = pd.read_csv('data/2-Client-Tunnel-anonymized.csv')
 ct.head()
 
+
 import numpy as np
 freq = ct['peer_id'].value_counts()
 p = (freq / freq.sum()).values
@@ -136,3 +141,9 @@ print({'entropy': entropy, 'gini': gini})
   version      = {v2},
   doi          = {10.5281/zenodo.15369068},
   url          = {https://
+
+
+
+the image path matches your repo (`/docs/Framework_SWARMI2P-4.jpg`), so it will render on `https://github.com/abksiddique/swarmi2p`. if you want me to also drop the ERD image into a later section, say the “Repository layout,” say the word and I’ll splice it in without changing any text.
+
+source used for context about the project and figures: :contentReference[oaicite:0]{index=0}
