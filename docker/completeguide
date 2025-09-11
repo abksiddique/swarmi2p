@@ -1,0 +1,368 @@
+DOCKER COMPOSE INSTANCE TO LAUNCH AN I2P ROUTER - 1 router
+
+use: stack  - Add stack - web editor. paste the bellow
+
+...................................................................
+version: '3'
+services:
+  i2p:
+    image: geti2p/i2p
+    container_name: i2p
+    ports:
+      - "4444:4444"
+      - "4445:4445"
+      - "6668:6668"
+      - "7652:7652"
+      - "7653:7653"
+      - "7654:7654"
+      - "7656:7656"
+      - "7657:7657"
+      - "7658:7658"
+      - "7659:7659"
+      - "7660:7660"
+    volumes:
+      - i2p-data:/var/lib/i2p
+    restart: unless-stopped
+
+volumes:
+  i2p-data:
+...........................................
+
+for Multiple i2p containers, use this
+
+...............................................  
+version: '3.8'
+services:
+  i2p:
+    image: geti2p/i2p
+    deploy:
+      mode: replicated
+      replicas: 50  # Adjust this number based on the number of instances you need
+    ports:
+      - target: 4444  # HTTP Proxy
+        published: 0
+        protocol: tcp
+      - target: 4445  # HTTPS Proxy
+        published: 0
+        protocol: tcp
+      - target: 6668  # IRC
+        published: 0
+        protocol: tcp
+      - target: 7652  # UDP Tunnel
+        published: 0
+        protocol: tcp
+      - target: 7653  # UPnP
+        published: 0
+        protocol: tcp
+      - target: 7654  # SAM
+        published: 0
+        protocol: tcp
+      - target: 7656  # BOB
+        published: 0
+        protocol: tcp
+      - target: 7657  # WebConsole
+        published: 0
+        protocol: tcp
+      - target: 7658  # I2CP
+        published: 0
+        protocol: tcp
+      - target: 7659  # HTTP
+        published: 0
+        protocol: tcp
+      - target: 7660  # HTTPS
+        published: 0
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: i2p-data
+        target: /var/lib/i2p
+    restart: unless-stopped
+
+volumes:
+  i2p-data:
+.....................................................
+
+0.0.0.0:34451  4444/tcp
+0.0.0.0:34452  4445/tcp
+0.0.0.0:34453  6668/tcp
+0.0.0.0:34454  7652/tcp
+0.0.0.0:34455  7653/tcp
+0.0.0.0:34456  7654/tcp
+0.0.0.0:34457  7656/tcp
+0.0.0.0:34458  7657/tcp
+0.0.0.0:34459  7658/tcp
+0.0.0.0:34460  7659/tcp
+0.0.0.0:34461  7660/tcp
+
+
+
+4444/tcp
+4445/tcp
+6668/tcp
+7652/udp
+7653/tcp
+7654/tcp
+7656/tcp
+7657/tcp
+7658/tcp
+7659/tcp
+7660/tcp
+
+
+
+.................
+DOCKER LINK for i2p: "https://geti2p.net/en/download/docker"
+...................................
+
+Step-by-Step Guide to Install and Configure Firewall on Ubuntu VPS
+Install UFW (Uncomplicated Firewall):
+UFW is a user-friendly firewall configuration tool for iptables.
+
+sudo apt update
+sudo apt install ufw
+
+
+Allow Necessary Ports:
+Open the ports required for I2P
+
+# Enable UFW if it's not already enabled
+sudo ufw enable
+
+# Allow I2P-related ports
+sudo ufw allow 4444/tcp
+sudo ufw allow 4445/tcp
+sudo ufw allow 6668/tcp
+sudo ufw allow 7652/tcp
+sudo ufw allow 7653/tcp
+sudo ufw allow 7654/tcp
+sudo ufw allow 7656/tcp
+sudo ufw allow 7657/tcp
+sudo ufw allow 7658/tcp
+sudo ufw allow 7659/tcp
+sudo ufw allow 7660/tcp
+
+# Allow SSH port to avoid being locked out
+sudo ufw allow 22/tcp
+
+# Reload UFW to apply the changes
+sudo ufw reload
+
+
+Check UFW Status
+
+sudo ufw status
+
+
+...................................................
+
+Allow port on firewall
+sudo ufw allow 32768:60999/tcp
+.................................
+where can i find my docker containers on the VPS
+/var/lib/docker/containers
+....................
+
+website for i2pd doctainer:https://i2pd.readthedocs.io/en/latest/user-guide/install/#docker-images
+
+.........................
+RUN SHELL in DOCKER CONTAINER
+docker exec -it <container_id> /bin/sh
+
+example:     docker exec -it e08b7c3d41fd455658bc57ce48ac24e18e97ceb16905e81a3a150323ce36df83 /bin/sh
+
+
+access shell as root
+docker exec -u 0 -it 11ad342449bdc7f780f7a6562f6062aa7c8e507ea0c85a3318d0d80ae4deacdf /bin/sh
+
+docker exec -u 0 -it 20d087cf1318e678738233935fb04dd47cf2c3b3f8198575bd4d7ed791b9a006 /bin/sh
+
+In ever container the netdb is in: " /i2p/.i2p "
+searching for the netdb: "find / -type d -name "netDb" 2>/dev/null"
+
+
+
+running a bash script in container: "sh scan_i2p.sh"
+
+APT INSTALL NANO: "apk update
+apk add nano
+"
+nano router.config
+
+exit to quit the router console for each 
+
+
+
+
+When you access the docker container over shell you can see the host.txt files.
+
+http://107.173.236.210:34381/netdb?r=.    = router - 
+
+.........................
+
+To access containers WINSCP: /var/lib/docker/containers
+
+...................................
+
+SCRIPT to get high capacity routers: the docker container
+/var/lib/docker/containers/8a3df266f21c95a01029a3cee5ad8095ba7e8fd7bb6393b5cb2e215a22e25af1
+
+
+docker cp 7abcac028a29febd2efd8fd49f1340a3ffb2e89695afb3494d912f2d1174ab77:/i2p/.i2p/rrd /home/DataAnalysis = working 
+
+
+................................................................
+MULTIPLE i2p router - docker stack
+
+version: '3.8'
+
+services:
+  i2p:
+    image: geti2p/i2p
+    deploy:
+      mode: replicated
+      replicas: 20  # Adjust this number based on the number of instances you need
+    ports:
+      - target: 4444  # HTTP Proxy
+        published: 0
+        protocol: tcp
+      - target: 4445  # HTTPS Proxy
+        published: 0
+        protocol: tcp
+      - target: 6668  # IRC
+        published: 0
+        protocol: tcp
+      - target: 7652  # UDP Tunnel
+        published: 0
+        protocol: tcp
+      - target: 7653  # UPnP
+        published: 0
+        protocol: tcp
+      - target: 7654  # SAM
+        published: 0
+        protocol: tcp
+      - target: 7656  # BOB
+        published: 0
+        protocol: tcp
+      - target: 7657  # WebConsole
+        published: 0
+        protocol: tcp
+      - target: 7658  # I2CP
+        published: 0
+        protocol: tcp
+      - target: 7659  # HTTP
+        published: 0
+        protocol: tcp
+      - target: 7660  # HTTPS
+        published: 0
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: i2p-data
+        target: /var/lib/i2p
+    restart: unless-stopped
+
+volumes:
+  i2p-data:
+
+...........................................
+
+ONE i2p router - docker stack
+version: '3'
+
+services:
+  i2p:
+    image: geti2p/i2p
+    container_name: i2p
+    ports:
+      - "4444:4444"
+      - "4445:4445"
+      - "6668:6668"
+      - "7652:7652"
+      - "7653:7653"
+      - "7654:7654"
+      - "7656:7656"
+      - "7657:7657"
+      - "7658:7658"
+      - "7659:7659"
+      - "7660:7660"
+    volumes:
+      - i2p-data:/var/lib/i2p
+    restart: unless-stopped
+
+volumes:
+  i2p-data:
+
+Root/Admin Password: vQbf5B1CyM2Mpx70M9
+
+...........................................
+
+PORTS
+
+http://107.173.236.210
+
+32995
+32929
+32885
+...........
+
+32995, 32929, 32885, 33017, 32984, 33028, 32841, 32808, 33039, 33050, 32896, 33061, 32918, 32962, 32797, 33072, 32951, 32874, 32830, 32852
+
+
+
+# Allow TCP ports 30,000 to 50,000
+sudo ufw allow 30000:50000/tcp
+
+# Allow UDP ports 30,000 to 50,000
+sudo ufw allow 30000:50000/udp
+
+# Reload the firewall to apply the changes
+sudo ufw reload
+
+
+........................................
+
+# Allow I2P's core ports for both TCP and UDP
+sudo ufw allow 4444:4445/tcp
+sudo ufw allow 7650:7660/tcp
+sudo ufw allow 7650:7660/udp
+sudo ufw allow 123/udp  # For time synchronization (SNTP)
+sudo ufw reload
+
+
+sudo ufw allow 30000:50000/tcp
+sudo ufw allow 30000:50000/udp
+sudo ufw reload
+
+..............................
+ALOOW Internal i2p ports also in the VPS Firewwall it self (UFW)
+
+# Allow TCP ports
+sudo ufw allow 4444/tcp
+sudo ufw allow 4445/tcp
+sudo ufw allow 6668/tcp
+sudo ufw allow 7653/tcp
+sudo ufw allow 7654/tcp
+sudo ufw allow 7656/tcp
+sudo ufw allow 7657/tcp
+sudo ufw allow 7658/tcp
+sudo ufw allow 7659/tcp
+sudo ufw allow 7660/tcp
+
+# Allow UDP port
+sudo ufw allow 7652/udp
+
+# Reload UFW to apply changes
+sudo ufw reload
+
+
+...................................
+
+docker exec -u 0 -it f08f77a9d39fbedf43921e0fdcd65f542eab4732dca2e1ffb20d7fe411b63cc9 /bin/sh
+...............................
+
+NOTE - 3-21-2025
+http://107.173.236.210:32774/
+http://107.173.236.210:32814/
+http://107.173.236.210:32794/
+
+
