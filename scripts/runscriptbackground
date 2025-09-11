@@ -1,0 +1,4 @@
+
+Script keeps running
+
+nohup ./extract_i2p_peers.sh > /i2p_data4/extract_i2p_peers.log 2>&1 &
