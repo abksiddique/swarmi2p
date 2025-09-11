@@ -60,8 +60,6 @@ Key ideas:
 > *If your folder names differ, keep this section as a guide and adjust paths in examples.*
 
 
-
-
 ---
 
 ## Prerequisites
@@ -81,14 +79,10 @@ Key ideas:
    git clone https://github.com/abksiddique/swarmi2p.git
    cd swarmi2p
 
-
-
 cp config/.env.sample .env
 # set ROUTER_COUNT, PORT_RANGE_START=30000, PORT_RANGE_END=50000, etc.
 
-
 docker compose up -d
-
 
 services:
   i2p-router:
@@ -107,20 +101,16 @@ services:
 volumes:
   i2pdata:
 
-
 python scripts/collect_tunnels.py \
   --interval 60 \
   --console http://127.0.0.1:<HTTP_CONSOLE_PORT>/tunnels \
   --profiles /home/i2p/.i2p
 
-
 sudo tcpdump -i <vpn_nic> -w captures/swarmi2p.pcap
-
 
 import pandas as pd
 ct = pd.read_csv('data/2-Client-Tunnel-anonymized.csv')
 ct.head()
-
 
 import numpy as np
 freq = ct['peer_id'].value_counts()
@@ -133,7 +123,6 @@ n = len(p)
 gini = 1 - 2*np.sum(cum)/n + 1/n
 print({'entropy': entropy, 'gini': gini})
 
-
 @dataset{muntaka2025mapping,
   title        = {Mapping the Invisible Internet: Framework and Dataset},
   author       = {Muntaka, Siddique A. and Bou Abdo, Jacques and Akanbi, Kemi and Oluwadare, Sunkanmi and Hussein, Faiza and Konyo, Oliver and Asante, Michael},
@@ -143,8 +132,3 @@ print({'entropy': entropy, 'gini': gini})
   doi          = {10.5281/zenodo.15369068},
   url          = {https://
 
-
-
-the image path matches your repo (`/docs/Framework_SWARMI2P-4.jpg`), so it will render on `https://github.com/abksiddique/swarmi2p`. if you want me to also drop the ERD image into a later section, say the “Repository layout,” say the word and I’ll splice it in without changing any text.
-
-source used for context about the project and figures: :contentReference[oaicite:0]{index=0}
