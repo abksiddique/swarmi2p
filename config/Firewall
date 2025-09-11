@@ -1,0 +1,8 @@
+Allow UFW firewall rule
+
+sudo ufw allow 443/tcp
+sudo ufw allow 1194/udp
+sudo ufw allow 5555/tcp
+sudo ufw allow 500/udp
+sudo ufw allow 4500/udp
+sudo ufw allow 1701/udp
