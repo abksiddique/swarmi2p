@@ -14,6 +14,19 @@ Large-scale deployment framework, data-collection scripts, and links to the publ
   <a href="#citation"><img alt="Cite" src="https://img.shields.io/badge/Cite-Please%20cite%20the%20dataset-green"></a>
 </p>
 
+1. Please cite the primary research paper
+
+## Citation
+
+If you use the framework or dataset, please cite the primary research paper and the dataset archive as follows:
+
+1.  **Primary Research Paper:**
+    Muntaka, S. A., Abdo, J. B., Akanbi, K., Oluwadare, S., Hussein, F., Konyo, O., & Asante, M. (2025). Mapping the Invisible Internet: Framework and Dataset. *arXiv preprint* arXiv:2506.18159.
+
+2.  **Dataset Archive:**
+    Muntaka, S. A., Bou Abdo, J., Akanbi, K., Oluwadare, S., Hussein, F., Konyo, O., & Asante, M. (2025). *Mapping the Invisible Internet: Framework and Dataset* [Data set]. Zenodo. **<https://doi.org/10.5281/zenodo.15369068>**
+
+
 ## TL;DR
 
 * **What:** Scripts + framework (SWARM-I2P) for deploying hundreds of I2P routers and collecting **network-layer** telemetry at scale.
