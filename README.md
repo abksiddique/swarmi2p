@@ -240,7 +240,7 @@ Public release on Zenodo (see DOI badge above). **Key files include:**
 | **Fig. 7 — Profiles overview (2×2)**             | Top-10 countries; speed & capacity histograms; speed–capacity scatter | `9-Profile-By-Country.csv`, `10-Profiles-By-Country-anonymized.csv`                        | `notebooks/Profiles_Country.ipynb`       | `docs/figures/fig7_profiles_overview_2x2.png`                                   |
 | **Fig. 8 — Nodes in multiple tunnels**           | Nodes co-appearing across tunnel types                                | `16-Nodes-Multiple-Tunnels.csv`                                                            | `notebooks/Peers_Multiple_Tunnels.ipynb` | `docs/figures/fig8_multi_tunnel_nodes.png`                                      |
 | **Fig. 9 — Multi-tunnel traffic patterns**       | Aggregate patterns for multi-tunnel nodes                             | `17-Nodes-In-MultiTunnels.csv`, `18-Nodes-In-MultiTunnels2.csv`                            | `notebooks/Nodes_MultiTunnels.ipynb`     | `docs/figures/fig9_multi_tunnel_traffic.png`                                    |
-| *(If included)* **Fig. 10 — Entropy/Gini**       | Diversity / concentration of peer selection                           | `4-Fastset-Nodes-By-Time.txt`, `6-High-Capacity-Set.txt`, `7-High-Capacity-Set-Freq.txt`   | `notebooks/Entropy_Gini.ipynb`           | `docs/figures/fig10_entropy_gini.png`                                           |
+
 
 **Run (minimal):**
 
